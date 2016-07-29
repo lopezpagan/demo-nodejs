@@ -3,8 +3,7 @@
 var http = require('http');
 
 //Get the environment variables we need.
-var ipaddr  = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port    = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port    = process.env.PORT || 8080;
 
 var http = require('http');
 
@@ -26,6 +25,6 @@ function onRequestPage(request, response) {
 	response.end();
 }
 
-var server = http.createServer(onRequestPage).listen(port, ipaddr);
+var server = http.createServer(onRequestPage).listen(port);
 console.log('Server running port ' + port);
 
